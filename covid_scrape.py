@@ -25,9 +25,10 @@ for i in range(len(casesToDeaths)):
     else:
         deaths.append((casesToDeaths[i].get_text()).strip()) #Entering deaths(Second value of two) as strings into the list: deaths to write to a csv file
 
-covidTable = pd.DataFrame(index=con,columns=['Cases','Deaths'])
+covidTable = pd.DataFrame(index=con)
 
-
-print(covidTable.columns(str(con[2]))
+covidTable.insert(0,column='Deaths',value=deaths,allow_duplicates='true')
+covidTable.insert(0,column='Cases',value=cases,allow_duplicates='true')
+covidTable.to_csv("covidValues.csv")
 #print(covidTable.to_numpy)
 
