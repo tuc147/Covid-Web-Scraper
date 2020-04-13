@@ -29,9 +29,9 @@ covidTable = pd.DataFrame(index=con)
 
 covidTable.insert(0,column='Deaths',value=deaths,allow_duplicates='true')
 covidTable.insert(0,column='Cases',value=cases,allow_duplicates='true')
-
+print(covidTable)
 #covidTable.to_csv("covidValues.csv")
-covidTable.to_json("covidValues.json")
+covidTable.to_json("C:\\Users\\samft\\OneDrive\\CodeThings\\personal fuckery\\Covid Tracker\\misc\\covidValues.json")
 
 
 
