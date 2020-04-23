@@ -12,7 +12,7 @@ table = scrape.find(id='countries') #<div> Containing the information
  
 countries = table.find_all(class_="text svelte-yabvh9") #All the countries in the table
 casesToDeaths = table.find_all(class_="num svelte-yabvh9 toggleable") #All cases and deaths in alternating order / every other entry is another country
-subS = (str(countries[0].get_text())) #get_text() retireves text contained within the tag 
+
 
 con = []
 for i in range(len(countries)):
@@ -31,7 +31,7 @@ covidTable.insert(0,column='Deaths',value=deaths,allow_duplicates='true')
 covidTable.insert(0,column='Cases',value=cases,allow_duplicates='true')
 print(covidTable)
 #covidTable.to_csv("covidValues.csv")
-covidTable.to_json("C:\\Users\\samft\\OneDrive\\CodeThings\\personal fuckery\\Covid Tracker\\misc\\covidValues.json")
+covidTable.to_json("C:\\Users\\samft\\OneDrive\\CodeThings\\personal fuckery\\Covid Tracker\\Frontend\\Data\\covidValues.json")
 
 
 
