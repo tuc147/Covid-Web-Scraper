@@ -24,10 +24,11 @@ for i in range(len(cases)):
 for i in range(len(deaths)):
     dth.append(deaths[i].get_text().strip())
 
-transfer = pd.DataFrame(index=con)
+transfer = pd.DataFrame()
 transfer.insert(0,column='Deaths',value=dth,allow_duplicates='true')
 transfer.insert(0,column='Cases',value=cs,allow_duplicates='true')
+transfer.insert(0,column='Country', value=con,allow_duplicates='true')
 
-transfer.to_json("C:\\Users\\samft\\OneDrive\\CodeThings\\personal fuckery\\Covid Tracker\\Frontend\\Data\\covidValues.json")
+transfer.to_json(orient='records',path_or_buf="C:\\Users\\samft\\OneDrive\\CodeThings\\personal fuckery\\Covid Tracker\\Frontend\\covidValues2.json")
 
-print(transfer)
+print(transfer.to_json(orient='records'))
